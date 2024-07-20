@@ -1,4 +1,4 @@
-package out.production.JAVA_PROGRAMS;
+package out.production.OASIS;
 
 import java.util.*;
 public class NumberGuessingGame {
