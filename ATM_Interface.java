@@ -4,19 +4,19 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 class ATM_Interface {
-    private static ArrayList<String> transactionsHistory = new ArrayList<>();
+    final private static ArrayList<String> transactionsHistory = new ArrayList<>();
     private static int balance = 0;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Hello welcome to ATM ");
+        System.out.println("Greetings User... Welcome to the ATM ");
         System.out.print("Enter your User ID: ");
         sc.nextLine();
         System.out.print(" Enter your User PIN: ");
         sc.nextLine();
 
-        System.out.println("you are login sucessfully");
+        System.out.println("You are logged in Successfully!");
         mainMenu();
     }
 
@@ -25,13 +25,13 @@ class ATM_Interface {
         int choice;
 
         do {
-            System.out.println("\nMain Menu:");
+            System.out.println("Main Menu:");
             System.out.println("1.Transactions History");
             System.out.println("2.Withdraw");
             System.out.println("3.Deposit");
             System.out.println("4.Transfer");
             System.out.println("5.Quit");
-            System.out.print("Enter your choice: ");
+            System.out.print("Choose your action: ");
 
             choice = sc.nextInt();
 
@@ -43,22 +43,22 @@ class ATM_Interface {
                     withdrawal();
                     break;
                 case 3:
-                    deposite();
+                    deposit();
                     break;
                 case 4:
                     transfer();
                     break;
                 case 5:
-                    System.out.println("Thank you for using the ATM! Have a great day ahead");
+                    System.out.println("Thank you for using the ATM! Have a great day ahead!!");
                     break;
                 default:
-                    System.out.println("It's Invalid! Please enter a valid option.");
+                    System.out.println("Please enter a valid option.");
             }
         } while (choice != 5);
     }
 
     private static void tranHistory() {
-        System.out.println("\nTransaction History:");
+        System.out.println("Transaction History:");
         for (String transaction : transactionsHistory) {
             System.out.println(transaction);
         }
@@ -72,13 +72,13 @@ class ATM_Interface {
         if (amount > 0 && amount <= balance) {
             balance -= amount;
             transactionsHistory.add("Withdraw: " + amount);
-            System.out.println("Withdrawal successful. Current balance: " + balance);
+            System.out.println("Withdrawal successful! Current balance: " + balance);
         } else {
-            System.out.println("Invalid amount or insufficient balance.");
+            System.out.println("Insufficient balance.");
         }
     }
 
-    private static void deposite() {
+    private static void deposit() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter amount to deposit: ");
         int amount = sc.nextInt();
@@ -86,7 +86,7 @@ class ATM_Interface {
         if (amount > 0) {
             balance += amount;
             transactionsHistory.add("Deposit: " + amount);
-            System.out.println("Deposit successful. Current balance: " + balance);
+            System.out.println("Deposited Successfully! Current balance: " + balance);
         } else {
             System.out.println("Invalid amount.");
         }
