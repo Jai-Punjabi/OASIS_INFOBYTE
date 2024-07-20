@@ -58,9 +58,9 @@ public class NumberGuessingGame {
             userGuess = input.nextInt();
             guess++;
             if (userGuess > randomNumber) {
-                System.out.println("Lower");
+                System.out.println("Make your guess Lower");
             } else if (userGuess < randomNumber) {
-                System.out.println("Higher");
+                System.out.println("Make your guess Higher");
             }
         } while (randomNumber != userGuess);
         System.out.println(" ");
